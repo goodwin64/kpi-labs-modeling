@@ -1,3 +1,7 @@
+/**
+ * Interpolates from plain Array of numbers structure to Array of objects
+ * ChartJS renders by
+ */
 function getDataPoints(data = [], intervalsCount = 20) {
     const [min, max] = [
         Math.min.apply(null, data),
@@ -25,6 +29,9 @@ function getDataPoints(data = [], intervalsCount = 20) {
     return intervals;
 }
 
+/**
+ * Renders "data" by points array
+ */
 function renderChart(data, chartContainerId, chartTitleText) {
     const dataPoints = getDataPoints(data);
     const chart = new CanvasJS.Chart(chartContainerId, {

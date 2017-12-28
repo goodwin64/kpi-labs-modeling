@@ -1,3 +1,6 @@
+/**
+ * Exponential distribution
+ */
 function task1(size, lambda) {
     function generateRandomNumber() {
         const xi = Math.random();
@@ -12,6 +15,9 @@ function task1(size, lambda) {
     renderChart(data, 'chartContainer1', 'Task 1');
 }
 
+/**
+ * Normal distribution
+ */
 function task2(size, sigma, a) {
     function generateRandomNumber() {
         const mu = new Array(12)
@@ -28,6 +34,9 @@ function task2(size, sigma, a) {
     renderChart(data, 'chartContainer2', 'Task 2');
 }
 
+/**
+ * Uniform distribution [0; 1)
+ */
 function task3(size, a, c) {
     let z = 1;
     const data = new Array(size)
