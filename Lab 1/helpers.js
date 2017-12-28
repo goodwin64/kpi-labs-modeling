@@ -66,3 +66,23 @@ function getMean(data) {
 function renderMean(data, s) {
     document.getElementById(s).innerText = getMean(data);
 }
+
+/**
+ * Renders standart deviation inside the specified HTML element
+ */
+function renderDeviation(data, s) {
+    document.getElementById(s).innerText = getStandardDeviation(data);
+}
+
+function getStandardDeviation(values){
+    const avg = getMean(values);
+
+    const squareDiffs = values.map(function(value){
+        const diff = value - avg;
+        return diff * diff;
+    });
+
+    const avgSquareDiff = getMean(squareDiffs);
+
+    return Math.sqrt(avgSquareDiff);
+}

@@ -14,6 +14,7 @@ function task1(size, lambda) {
 
     renderChart(data, 'chartContainer1', 'Task 1');
     renderMean(data, 'task1-mean');
+    renderDeviation(data, 'task1-deviation');
 }
 
 /**
@@ -34,6 +35,7 @@ function task2(size, sigma, a) {
 
     renderChart(data, 'chartContainer2', 'Task 2');
     renderMean(data, 'task2-mean');
+    renderDeviation(data, 'task2-deviation');
 }
 
 /**
@@ -51,4 +53,5 @@ function task3(size, a, c) {
 
     renderChart(data, 'chartContainer3', 'Task 3');
     renderMean(data, 'task3-mean');
+    renderDeviation(data, 'task3-deviation');
 }
