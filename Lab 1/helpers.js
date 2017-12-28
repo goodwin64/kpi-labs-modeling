@@ -23,13 +23,25 @@ function getDataPoints(data = [], intervalsCount = 20) {
         intervals[currInterval].y++;
     });
     return intervals;
+}
 
-    // const { lowestIndex, highestIndex } = intervals.reduce((acc, curr, index, arr) => {
-    //     if (curr.y > arr[acc.highestIndex]) {
-    //         acc.highestIndex = index;
-    //     } else if (curr.y < arr[acc.lowestIndex]) {
-    //         acc.lowestIndex = index;
-    //     }
-    //     return acc;
-    // }, {lowestIndex: 0, highestIndex: 0});
+function renderChart(data, chartContainerId, chartTitleText) {
+    const dataPoints = getDataPoints(data);
+    const chart = new CanvasJS.Chart(chartContainerId, {
+        animationEnabled: true,
+        exportEnabled: true,
+        zoomEnabled: true,
+        theme: "light1", // "light1", "light2", "dark1", "dark2"
+        title: {
+            text: chartTitleText
+        },
+        data: [{
+            type: "column", //change type to bar, line, area, pie, etc
+            indexLabel: "{y}", //Shows y value on all Data Points
+            indexLabelFontColor: "#5A5757",
+            indexLabelPlacement: "outside",
+            dataPoints,
+        }]
+    });
+    chart.render();
 }
