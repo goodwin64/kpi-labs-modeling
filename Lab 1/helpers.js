@@ -52,3 +52,17 @@ function renderChart(data, chartContainerId, chartTitleText) {
     });
     chart.render();
 }
+
+/**
+ * Average in Array
+ */
+function getMean(data) {
+    return data.reduce((acc, current) => acc + current) / data.length;
+}
+
+/**
+ * Renders mean (average in array) inside the specified HTML element
+ */
+function renderMean(data, s) {
+    document.getElementById(s).innerText = getMean(data);
+}

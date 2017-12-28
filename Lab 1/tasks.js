@@ -13,6 +13,7 @@ function task1(size, lambda) {
         .sort((a, b) => a - b);
 
     renderChart(data, 'chartContainer1', 'Task 1');
+    renderMean(data, 'task1-mean');
 }
 
 /**
@@ -32,6 +33,7 @@ function task2(size, sigma, a) {
         .sort((a, b) => a - b);
 
     renderChart(data, 'chartContainer2', 'Task 2');
+    renderMean(data, 'task2-mean');
 }
 
 /**
@@ -48,4 +50,5 @@ function task3(size, a, c) {
         .sort((a, b) => a - b);
 
     renderChart(data, 'chartContainer3', 'Task 3');
+    renderMean(data, 'task3-mean');
 }
